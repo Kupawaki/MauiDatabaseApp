@@ -4,15 +4,44 @@
              x:Class="MauiDatabaseApp.MainPage">
 
     <ScrollView>
-        <VerticalStackLayout
-            Spacing="25"
-            Padding="30,0"
-            VerticalOptions="Center">
 
-            <Button
-                Text="Get All Documents"
-                Clicked="OnGetAllButtonClicked"
-                HorizontalOptions="Center" />
+        <VerticalStackLayout> <!--Main VSL-->
+
+            <VerticalStackLayout Margin="10">
+                <CollectionView x:Name="BooksCollectionView" SelectionMode="Single">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid Padding="10">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="100"/>
+                                    <ColumnDefinition Width="100"/>
+                                    <ColumnDefinition Width="100"/>
+                                </Grid.ColumnDefinitions>
+                                <Label Grid.Row="0" Grid.Column="0" Text="{Binding title}"/>
+                                <Label Grid.Row="0" Grid.Column="1" Text="{Binding author}"/>
+                                <Label Grid.Row="0" Grid.Column="2" Text="{Binding publisher}"/>
+                            </Grid>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+
+
+                <Button
+                    Text="Get All Documents"
+                    Clicked="OnGetAllButtonClicked"
+                    HorizontalOptions="Center"
+                    Margin="0,10,0,0"/>
+            </VerticalStackLayout>
+
+            <VerticalStackLayout Margin="10">
+                <Entry x:Name="titleET" Placeholder="Enter title"/>
+                <Entry x:Name="authorET" Placeholder="Enter author"/>
+                <Entry x:Name="publisherET" Placeholder="Enter publisher"/>
+                <Button Text="Create Document" Clicked="OnCreateDocumentButtonClicked" HorizontalOptions="Center"/>
+            </VerticalStackLayout>
 
         </VerticalStackLayout>
     </ScrollView>
