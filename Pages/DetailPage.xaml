@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiDatabaseApp.Pages.DetailPage"
+             Title="DetailPage">
+    <VerticalStackLayout>
+        <Label x:Name="titleLB" />
+        <Label x:Name="authorLB" />
+        <Label x:Name="publisherLB" />
+
+        <Button Text="Delete This" Clicked="OnDeleteButtonClicked"/>
+
+        <Button Text="Update This" Clicked="OnUpdateButtonClicked"/>
+    </VerticalStackLayout>
+</ContentPage>
